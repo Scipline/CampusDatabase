@@ -1,0 +1,551 @@
+[
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "保卫处",
+		"id": 12000
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "招投标办公室",
+		"id": 11900
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "实验室与设备管理处",
+		"id": 11800
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "后勤与资产管理处（国有资产管理办公室）",
+		"id": 11700
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "基建处",
+		"id": 11600
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "审计处",
+		"id": 11500
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "财务处",
+		"id": 11400
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "外事处(港澳台办公室、国际教育办公室）",
+		"id": 11300
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "科技处",
+		"id": 11200
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "教务处（招生办公室）",
+		"id": 11100
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "党委教师工作部、人事处（教师发展中心）",
+		"id": 11000
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "发展规划处（学科建设办公室、校地合作办公室、高等教育研究所）",
+		"id": 10900
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "离退休工作处",
+		"id": 10800
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "党委研究生工作部、研究生处",
+		"id": 10700
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "党委学生工作部、人民武装部、学生工作处、（就业指导中心、学生社区管理服务中心、心理健康教育与咨询中心）",
+		"id": 10600
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "纪委办公室、监察处、监察专员办公室",
+		"id": 10500
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "党委宣传部、统战部（校友工作办公室）",
+		"id": 10400
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "党委组织部（党校办公室）、机关党委",
+		"id": 10300
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "党政办公室（学校董事会办公室）",
+		"id": 10200
+	},
+	{
+		"pid": 10000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "校领导",
+		"id": 10100
+	},
+	{
+		"pid": 20000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "工会",
+		"id": 20100
+	},
+	{
+		"pid": 20000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "团委",
+		"id": 20200
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "体育部",
+		"id": 31800
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "马克思主义学院",
+		"id": 31700
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "人文与社会科学学院",
+		"id": 31600
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "自动化学院",
+		"id": 31500
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "城乡建设学院",
+		"id": 31400
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "计算科学学院",
+		"id": 31300
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "资源与环境学院",
+		"id": 31200
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "化学化工学院",
+		"id": 31100
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "何香凝艺术设计学院",
+		"id": 31000
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "机电工程学院",
+		"id": 30900
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "外国语学院",
+		"id": 30800
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "信息科学与技术学院",
+		"id": 30700
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "管理学院",
+		"id": 30600
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "经贸学院",
+		"id": 30500
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "动物科技学院",
+		"id": 30400
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "轻工食品学院",
+		"id": 30300
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "园艺园林学院",
+		"id": 30200
+	},
+	{
+		"pid": 30000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "农业与生物学院",
+		"id": 30100
+	},
+	{
+		"pid": 40000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "图书馆",
+		"id": 40100
+	},
+	{
+		"pid": 40000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "网络与现代教育技术中心",
+		"id": 40200
+	},
+	{
+		"pid": 40000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "学报编辑部",
+		"id": 40300
+	},
+	{
+		"pid": 40000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "教学科研基地管理中心",
+		"id": 40400
+	},
+	{
+		"pid": 50000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "校医院",
+		"id": 50100
+	},
+	{
+		"pid": 50000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "纪念馆",
+		"id": 50200
+	},
+	{
+		"pid": 50000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "广东科技服务公司",
+		"id": 50300
+	},
+	{
+		"pid": 60000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "继续教育学院（乡村振兴培训学院）",
+		"id": 60100
+	},
+	{
+		"pid": 60000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "国际交流培训中心",
+		"id": 60200
+	},
+	{
+		"pid": 60000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "创新创业教育学院",
+		"id": 60300
+	},
+	{
+		"pid": 70000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "现代农业研究院",
+		"id": 70100
+	},
+	{
+		"pid": 70000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "文化研究所（挂靠马克思主义学院）",
+		"id": 70200
+	},
+	{
+		"pid": 0,
+		"isParent": "TRUE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 1,
+		"name": "党政管理机构",
+		"id": 10000
+	},
+	{
+		"pid": 0,
+		"isParent": "TRUE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 1,
+		"name": "群团组织",
+		"id": 20000
+	},
+	{
+		"pid": 0,
+		"isParent": "TRUE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 1,
+		"name": "教学机构",
+		"id": 30000
+	},
+	{
+		"pid": 0,
+		"isParent": "TRUE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 1,
+		"name": "教辅机构",
+		"id": 40000
+	},
+	{
+		"pid": 0,
+		"isParent": "TRUE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 1,
+		"name": "附属机构",
+		"id": 50000
+	},
+	{
+		"pid": 0,
+		"isParent": "TRUE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 1,
+		"name": "管理型教学机构",
+		"id": 60000
+	},
+	{
+		"pid": 0,
+		"isParent": "TRUE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 1,
+		"name": "研究机构",
+		"id": 70000
+	},
+	{
+		"pid": 0,
+		"isParent": "TRUE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 1,
+		"name": "其他",
+		"id": 90000
+	},
+	{
+		"pid": 90000,
+		"isParent": "FALSE",
+		"open": null,
+		"nocheck": "FALSE",
+		"level": 2,
+		"name": "其他部门",
+		"id": 90100
+	}
+]

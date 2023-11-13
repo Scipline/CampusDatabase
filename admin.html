@@ -1,0 +1,265 @@
+<!--
+        * 存储帐号的数据，这些数据只用作IMP管理页面
+        * 
+        * @author 
+        *
+-->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>用户信息数据表</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8,9,10" />
+        <link rel="stylesheet" type="text/css"	href="static/css/bootstrap-mini.css" />
+        <link rel="stylesheet" type="text/css" href="static/css/base.css">
+        <link rel="stylesheet" type="text/css" href="static/css/easyui.css">
+        <link rel="stylesheet" type="text/css" href="static/css/icon.css">
+       <link rel="stylesheet" href="static/css/ztreestyle.css" type="text/css"></link>
+        <script type="text/javascript"> 
+    		var pageNumber=1;
+    		var pageSize=15;
+            <!--  -->
+            <!--  -->
+    		var rootUrl = "http://127.0.0.1:5000";
+            var token = "?token=xiaozong"
+            <!--  -->
+            <!--  -->
+    	</script>
+        <script type="text/javascript">
+            //呈现顶端遮罩
+            if (top.showMask) top.showMask();
+        </script>
+        <style type="text/css">
+			#outdateset span .l-btn-text{
+        		width:60px;
+        	}
+			#changepwd span .l-btn-text{
+        		width:60px;
+        	}
+			#setpetname span .l-btn-text{
+        		width:60px;
+        	}
+			.selectstyle{
+				margin:2px 0px 0px 0px;
+			    border: 1px solid #A4BED4;
+			    font-size: 12px;
+			    height: 22px;
+			    line-height: 22px;
+			    padding: 0;
+			    width: 100px;
+        	}
+        </style>
+    </head>
+    <body class="easyui-layout" style="visibility:hidden">
+        <div data-options="region:'north',border:false,split:true" style="padding:0px; border-bottom:1px solid #99BBE8; height:38px; width:auto;">
+            <form class="query" style="margin:0; padding:0">
+                <span class="property">
+                    <label>帐号：</label>
+                    <input id="Suserid" name="userid" type="text" class="input easyui-validatebox" style="width:80px" validType="text[1,127]" />
+                </span>
+                <span class="property">
+                    <label>姓名：</label>
+                    <input id="Scn" name="cn" type="text" class="input easyui-validatebox" style="width:80px" validType="text[1,127]" />
+                </span>
+                <span class="property">
+                    <label class="" for="departmet">部门：</label>
+					<!-- <select id="Sdepartmet" name="departmet" style="height:22px;width:100px;"> -->
+            		<input type="hidden" name="departmet" id="departmet" value="" />
+            		<input type="hidden" name="department" id="department" value="" />
+					<input type="text" id="department_NAME" name="department_NAME" onclick='var config={"treePath":"/management/org/getOrgTree"+token,"hidObj":"department"};showMenu(config);' readonly="readonly" class="input easyui-validatebox" style="width:80px"/>
+				 </span>
+                <span class="property">
+                    <label>用户类型：</label>
+                    <select id="Susertype" name="usertype" data-options="panelHeight:'auto'" class="selectstyle" style="width:80px" >
+                    </select>
+                </span>
+                <span class="property">
+                    <label>帐号来源：</label>
+                    <select id="Saddfrom" name="addfrom" data-options="panelHeight:'auto'" class="selectstyle" style="width:80px" >
+                    </select>
+                </span>
+                <span class="property">
+                    <label>帐号锁定状态：</label>
+                    <select id="Slockstatus" name="lockstatus" data-options="panelHeight:'auto'" class="selectstyle" style="width:80px" >
+                        <option selected></option>
+                        <option value="0">已锁定</option>
+                        <option value="1">正常</option>
+                    </select>
+                </span>
+                <a href="javascript:void(0)" id="btnSearch" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:false,disabled:false">查询</a>
+                <a href="javascript:reset()" id="btnReset" class="easyui-linkbutton" data-options="iconCls:'icon-reset',plain:false,disabled:false">重置</a>
+            </form>
+        </div>
+        <div id="department_MenuContent" class="department_MenuContent" style="display:none; position: absolute; background-color:#FFFFCC;z-index:99; height:200px;width:240px;padding: 0px;overflow: auto;border-width: 1px;border-style: inset;">
+			<ul id="department_zTreeObj" class="ztree" style="margin-top: 0; width:210px;"></ul>
+		</div>
+        <div data-options="region:'center',border:false" style="padding:0px;">
+            <table id="paccounts"></table>
+        </div>
+        <script type="text/javascript" src="static/js/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.easyui.min.js"></script>
+        <script type="text/javascript" src="static/js/easyui-lang-zh_cn.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery-domain.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.ztree.core-3.5.js"></script>
+        <script type="text/javascript" src="static/js/jquery.ztree.excheck-3.5.js"></script>
+        <script type="text/javascript" src="static/js/ztree-dictionary.js"></script>
+        <script type="text/javascript">
+        	
+	        function reset(){
+				 $("#Suserid").val("");
+				 $("#Scn").val("");
+				 $("#department_NAME").val("");
+				 $("#department").val("");
+				 $("#departmet").val("");
+				 $("#Susertype").val("");
+				 $("#Saddfrom").val("");
+				 $("#Slockstatus").val("");
+			}
+	      //修改密码
+        	var changepwd={
+                id:'changepwd',
+                text:'加密密码',
+                iconCls:'icon-password',
+                handler:function(){
+                	$.ajax({
+                    	url:`${rootUrl}/admin/encryptPassword`,
+                    	type:"POST",
+                    	dataType:"JSON",
+                    	async:false,
+                    	success:function(result){
+                    		if(result.result=="1"){
+	                    		
+	                    		$.messager.alert("信息","执行成功！","info",function(){
+	                    			getPAccounts()
+	                    		});
+                    		}else{
+                    			$.messager.alert("信息","系统执行异常，请联系管理员！","info",function(){});
+                    		}
+                    	},
+                    	error:function(XHR, status, errorThrow){
+                    		$.messager.alert("错误信息","系统执行异常，请联系管理员！","error",function(){});
+                    	}
+                    }); 	
+            	},
+                scope:"all",
+                edit:""
+        	};
+            function getPAccounts() {
+                var departmet = $('#department').val();
+               	$('#departmet').val(departmet);
+               	
+                var queryParams = $('form.query').domain('collect');
+                $("#btnSearch").linkbutton("disable");
+                var t = $('#paccounts');
+                if(typeof($.data(t[0], 'datagrid')) == 'undefined') {
+                	var customToolbar =[changepwd];
+                	t.domain('datagrid', {
+                    	url: `${rootUrl}/admin/page${token}`,
+                    	queryParams: queryParams,
+                    	toolbar: customToolbar,
+                    	title:"当前采用MD5方式加密，不可查看明文密码！",
+                    	openHeight:450,
+                    	openWidth:800,
+                        columns: [[
+	                    	{field: 'id', title: '自动编号', width: 100, sortable: true, align: 'left', hidden: true}
+	                    	,{field: 'userid', title: '帐号', width: 100, sortable: true, align: 'center', hidden: false}
+	                    	,{field: 'cn', title: '姓名', width: 100, sortable: true, align: 'left', hidden: false}
+	                    	,{field: 'passwd', title: '密码', width: 150, sortable: true, align: 'left', hidden: false}
+	                    	,{field: 'security', title: '加密方式', width: 60, sortable: true, align: 'center', hidden: false}
+	                    	,{field: 'lifetime', title: '帐号有效期', width: 90, sortable: true, align: 'center', hidden: false, formatter: function(value) { return $.modifiers.formatDatetime(value, 'yyyy-MM-dd'); }}
+	                    	,{field: 'departmetname', title: '部门', width: 150, sortable: true, align: 'left', hidden: false}
+	                    	,{field: 'usertypename', title: '用户类型', width: 60, sortable: true, align: 'center', hidden: false}
+	                    	,{field: 'email', title: '邮箱', width: 90, sortable: true, align: 'left', hidden: false}
+	                    	,{field: 'outemail', title: '校外邮箱', width: 90, sortable: true, align: 'left', hidden: false}
+	                    	,{field: 'telnum', title: '手机号码', width: 80, sortable: true, align: 'center', hidden: false}
+	                    	,{field: 'cardid', title: '身份证号', width: 120, sortable: true, align: 'center', hidden: false}
+	                    	,{field: 'addfrom', title: '帐号来源', width: 90, sortable: true, align: 'center', hidden: false, formatter: function(value) {if(value=='local')return '临时人员';else return value;}}
+	                    	,{field: 'lockstatus', title: '帐号锁定状态', width: 100, sortable: true, align: 'center', hidden: false, formatter: function(value) {if(value==0)return '已锁定';else if(value=='1') return '正常'}}
+	                    	,{field: 'petname', title: '别名', width: 100, sortable: true, align: 'left', hidden: false}
+	                    ]],
+                        onLoadSuccess: function(data, status, XHR) {
+               				$('#departmet').val("");
+                            $("#btnSearch").linkbutton("enable");
+                        },
+                        onLoadError: function(XHR, status, errorThrow) {
+                            $("#btnSearch").linkbutton("enable");
+                        },
+                        names: [{
+							url: `${rootUrl}/management/org/orgAll${token}`,
+								fKeyField: 'department'
+							}
+	                    ],
+	                    subject: '帐号信息'
+                    });
+                }
+                else {
+                    t.datagrid("load", queryParams);
+                }
+            }
+
+          	//加载帐号来源
+            function seltaskname(){
+    			var params; 	
+    			$.ajax({
+    				url : `${rootUrl}/accountmainten/paccount/seladdfrom${token}`,
+    				type : "get",
+    				data: params,
+    				dataType : "json",
+    				success : function(data, status, XHR) {
+    					var addfromlst = data;
+    					var addfroms = '<option selected></option>'; 
+    						for (var i = 0; i < addfromlst.length; i++) {
+        						if(addfromlst[i].ADDFROM=='local'){
+        							addfroms = addfroms + "<option value='"+addfromlst[i].ADDFROM+"'>" + '临时人员' + "</option>";
+        						}else{
+        							addfroms = addfroms + "<option value='"+addfromlst[i].ADDFROM+"'>" + addfromlst[i].ADDFROM + "</option>";
+        						}
+    						}
+   						$('#Saddfrom').html(addfroms);
+    				},
+    				error : function() {
+    				}
+    			});
+    		}
+
+          	//加载用户类型
+            function selusertype(){
+    			var params; 	
+    			$.ajax({
+    				url : `${rootUrl}/accountmainten/paccount/selusertype${token}`,
+    				type : "get",
+    				data: params,
+    				dataType : "json",
+    				success : function(data, status, XHR) {
+    					var usertylelst = data;
+    					var usertypes = '<option selected></option>'; 
+    						for (var i = 0; i < usertylelst.length; i++) {
+        						usertypes = usertypes + "<option value='"+usertylelst[i].ID+"'>" + usertylelst[i].NAME + "</option>";
+    						}
+   						$('#Susertype').html(usertypes);
+    				},
+    				error : function() {
+    				}
+    			});
+    		}
+            
+        	$(function(){
+        		//解析页面
+                $.parser.parse();
+                $("#btnSearch")[0].onclick = getPAccounts;
+                //显示隐藏页面
+                $('body').css({ visibility: 'visible' });
+                //移除顶端遮罩
+                if (top.hideMask) top.hideMask();
+                //加载数据
+                if($.fn.domain.defaults.datagrid.auto) {
+                    getPAccounts();
+               	 	seltaskname();
+               	 	selusertype();
+                }
+            });
+        </script>
+    </body>
+</html>
